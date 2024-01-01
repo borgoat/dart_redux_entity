@@ -131,7 +131,7 @@ class RemoteEntityReducer<S extends RemoteEntityState<T>, T>
           state.copyWith(loadingIds: newIds, updateTimes: updateTimes) as S);
     }
     if (action is SuccessRetrieveAll<T>) {
-      return this.adapter.upsertMany(
+      return this.adapter.addAll(
             action.entities,
             state.copyWith(
               loadingAll: false,
